@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "container mt-3">
+        <a href="/">
+            <button class = "btn btn-secondary">Вернуться</button>
+        </a>
+        <h2>Редактировать задачу</h2>
+        <form action="/edit" method="POST">
+            <input type="hidden" name="id" value="<%=data._id%>">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Название задачи</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Название задачи" value="<%=data.title%>" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Описание задачи</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%=data.description%></textarea>
+            </div>
+            <button class = "btn btn-primary" type="submit">Сохранить</button>
+        </form>
+    </div>
+</body>
+</html>
